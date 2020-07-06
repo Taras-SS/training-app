@@ -7,11 +7,10 @@ export default function () {
 
     }, []);
 
-
-
     return (
         <Menu>
             <Menu.Item
+                to='/admin'
                 name='Admin'
             >
                 Admin
@@ -29,5 +28,6 @@ export default function () {
                 Upcoming Events
             </Menu.Item>
         </Menu>
+
     );
 }
