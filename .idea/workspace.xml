@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5262475d-dcb8-410d-936d-21a93c77f813" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Admin/Adminwrapper/Adminwrapper.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Admin/Adminwrapper/Adminwrapper.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Admin/Goodsform/Goodsform.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Admin/Goodsform/Goodsforms.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Admin/Sidebar/Sidebar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Admin/Sidebar/Sidebar.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Admin/Admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Admin/Admin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Admin/Goodsform/Goodsforms.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Admin/Goodsform/Goodsforms.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Admin/Sidebar/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Admin/Sidebar/Sidebar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,12 +34,24 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
-    <property name="ts.external.directory.path" value="C:\Users\ADMIN\Desktop\training-app\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\taras\OneDrive\Робочий стіл\training-app\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ADMIN\Desktop\training-app\src\pages\Admin\Sidebar" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
