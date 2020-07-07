@@ -1,17 +1,16 @@
 import MainSidebar from "../Sidebar/Sidebar";
 import React from "react";
-import s from './Adminwrapper.module.css'
+import s from "./Adminwrapper.module.css";
 import Goodsforms from "../Goodsform/Goodsforms";
 
 const Adminwrapper = () => {
+  return (
+    <div className={s.wrapper}>
+      <MainSidebar />
 
-    return (
-        <div className={s.wrapper}>
-            <MainSidebar/>
+      <Goodsforms />
+    </div>
+  );
+};
 
-        <Goodsforms/>
-        </div>
-    )
-}
-
-    export default Adminwrapper;
+export default Adminwrapper;
