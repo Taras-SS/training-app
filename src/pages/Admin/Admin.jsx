@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import MainSidebar from "./Sidebar/Sidebar";
+import Adminwrapper from "./Adminwrapper/Adminwrapper";
 
 function App() {
-    return (
-        <div>
-            dfsadfdfsfdsf
-        </div>
-    );
+  return (
+    <div>
+      <Adminwrapper />
+    </div>
+  );
 }
 
 export default App;
