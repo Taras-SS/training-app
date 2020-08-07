@@ -1,0 +1,42 @@
+.signUpWrapper{
+    margin: 60px auto 0 auto;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 10px;
+    width: 400px;
+}
+
+.formContainer{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.input, .btn{
+    display: block !important;
+    margin-bottom: 30px;
+}
+
+.input{
+    height: 55px;
+    width: 100%;
+}
+
+.input>input{
+    height: 100%;
+    width: 100%;
+}
+
+.btn{
+    padding: 15px 45px !important;
+    font-size: 1.3em !important;
+}
+
+.errorMessage{
+    color: rgb(230, 0, 0);
+    margin-top: -20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-self: start;
+}

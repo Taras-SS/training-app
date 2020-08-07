@@ -1,13 +1,12 @@
-import React from "react";
-import MainSidebar from "./Sidebar/Sidebar";
+import React, { useEffect } from "react";
 import Adminwrapper from "./Adminwrapper/Adminwrapper";
 
-function App() {
+export default function (props) {
+  useEffect(() => {}, []);
+
   return (
     <div>
       <Adminwrapper />
     </div>
   );
 }
-
-export default App;

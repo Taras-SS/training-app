@@ -7,7 +7,6 @@ const Adminwrapper = () => {
   return (
     <div className={s.wrapper}>
       <MainSidebar />
-
       <Goodsforms />
     </div>
   );
