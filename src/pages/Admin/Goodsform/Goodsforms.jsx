@@ -3,8 +3,9 @@ import s from "./Goodsform.module.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Button, TextArea, Image, Input, Label } from "semantic-ui-react";
 import * as Yup from "yup";
-import { uploadImage, addGoods} from "../../../api/goods";
+import { uploadImage, addGoods } from "../../../api/goods";
 import noImage from "../../../assets/images/noimage.png";
+import Notification from "../../../components/Notifications/SuccessNotification";
 
 const validationSchema = Yup.object().shape({
   title: Yup.string()
@@ -26,25 +27,31 @@ const Goodsforms = () => {
   const [image, setImage] = useState(noImage);
   const [uploadedFile, setUploadedFile] = useState(null);
   const [uploadImageStatus, setUploadImageStatus] = useState(true);
+  const [goodsStatus, setGoodsStatus] = useState(false);
 
-  useEffect(() => {}, []);
+  useEffect(() => {}, [uploadImageStatus]);
 
   const handleGoods = async (data) => {
-    if(image != noImage){
-      setUploadImageStatus(true);
+    if (image !== noImage) {
       const imageData = await addImage();
-      if(imageData.status === 201){
+      if (imageData.status === 201) {
         const response = await addGoods({
           imageUrl: imageData.data.imageUrl,
           title: data.title,
           price: data.price,
-          description: data.description
+          description: data.description,
         });
+        setUploadImageStatus(true);
+        if (response.status === 201) {
+          setGoodsStatus(true);
+          setTimeout(() => {
+            setGoodsStatus(false);
+          }, 3000);
+        }
       }
-    }else{
-      return setUploadImageStatus(false);
+    } else {
+      setUploadImageStatus(false);
     }
-    return null;
   };
 
   const addImage = async () => {
@@ -81,12 +88,14 @@ const Goodsforms = () => {
     reader.onloadend = () => {
       setUploadedFile(file);
       setImage(reader.result);
+      setUploadImageStatus(true);
     };
     reader.readAsDataURL(file);
   };
 
   return (
     <div>
+      {goodsStatus ? <Notification /> : ""}
       <h2 className={s.formTitile}>Форма добавлення нових товарів</h2>
       <div className={s.formwrapper}>
         <div className={s.formelement}>
@@ -163,7 +172,7 @@ const Goodsforms = () => {
         </div>
 
         <div className={s.imgWrapper}>
-          <div className={s.imageBlock}>
+          <div className={uploadImageStatus ? s.imageSuccessed : s.imageFailed}>
             <Image size="medium" src={image} />
           </div>
           <Button primary className={s.inputWrapper}>
