@@ -63,7 +63,7 @@ const MainSidebar = () => {
         onClick={() => setVisible(true)}
       />
     </div>
-  );
+      )
 };
 
 export default MainSidebar;
