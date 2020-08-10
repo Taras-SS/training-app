@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+﻿import React, { useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Button } from "semantic-ui-react";
 import { CustomInput } from "../SignIn/SignIn";
@@ -30,10 +30,6 @@ interface ISignUp {
 }
 
 const SignUp = ({ onSignUp, history }: any) => {
-<<<<<<< HEAD
-=======
-
->>>>>>> 35182a33c88a1791173eafbee091b49d221b7d65
   useEffect(() => {}, []);
 
   const handleSignUp = async (values: ISignUp, formikActions: any) => {
