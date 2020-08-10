@@ -1,0 +1,52 @@
+.sidebarContent{
+    width: 100% !important;
+}
+
+.sidebarPushable{
+    border: 0 !important;
+    box-shadow: 0 0 0 0 !important;
+    border-top-right-radius: 40% !important;
+    border-bottom-right-radius: 80% !important;
+}
+
+.menuItem{
+    font-family: Verdana;
+    padding: 10px 0;
+    font-size: 17px;
+}
+.hideMenuBtn{
+    padding: 10px 0;
+    font-size: 17px;
+    margin-top: 65%;
+    border: 0 !important;
+}
+
+.hideMenuBtn::before{
+    display: none;
+}
+
+.userAvatar{
+    display: block;
+    margin: 5px auto 10px auto;
+}
+
+.showMenuWrapper{
+    border-top-right-radius: 90%;
+    border-bottom-right-radius: 50%;
+    background-color: rgb(100, 100, 100);
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.showMenuArrow{
+    font-size: 1.71428571em !important;
+    font-family: Verdana;
+    color: white;
+}
+
+.showMenuArrow:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}

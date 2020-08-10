@@ -2,28 +2,41 @@ import React, { useEffect, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Button, Input, Icon } from "semantic-ui-react";
 import * as Yup from "yup";
+import { signIn } from "../../store/actions/auth";
+import { ISignIn } from "../../api/auth";
+import { connect } from "react-redux";
 import styles from "./SignIn.module.css";
+
+const validationSchema = Yup.object().shape({
+  email: Yup.string()
+    .required("Email є обов`язковим")
+    .email("Введені символи не є email"),
+  password: Yup.string()
+    .required("Пароль є обов`язковим")
+    .min(6, "Мінімальна довжина - 6 символів"),
+});
 
 const initialValues = {
   email: "",
   password: "",
 };
 
-interface SignIn {
-  email: string;
-  password: string;
-}
-
-export default function () {
+const SignIn = ({ onSignIn, history }: any) => {
   useEffect(() => {}, []);
 
-  const handleSubmit = (values: SignIn) => {
-    console.log(values);
+  const handleSubmit = async (values: ISignIn, formikActions: any) => {
+    const response = await onSignIn(values);
+    if (!response) history.push("/");
+    if (response && response.err) formikActions.setErrors(response.err);
   };
 
   return (
     <div className={styles.signInWrapper}>
-      <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleSubmit}
+        validationSchema={validationSchema}
+      >
         {({
           values,
           handleSubmit,
@@ -42,6 +55,11 @@ export default function () {
               onChange={handleChange}
               className={styles.input}
             />
+            <ErrorMessage
+              component="div"
+              name="email"
+              className={styles.errorMessage}
+            />
             <Field
               name="password"
               placeholder="Password"
@@ -50,6 +68,11 @@ export default function () {
               value={values.password}
               onChange={handleChange}
               className={styles.input}
+            />
+            <ErrorMessage
+              component="div"
+              name="password"
+              className={styles.errorMessage}
             />
             <Button type="submit" primary className={styles.btn}>
               Confirm
@@ -67,7 +90,14 @@ export default function () {
       </Formik>
     </div>
   );
-}
+};
+
+const mapDispatchToProps = (dispatch: Function) => {
+  return {
+    onSignIn: (credential: ISignIn) => dispatch(signIn(credential)),
+  };
+};
+export default connect(null, mapDispatchToProps)(SignIn);
 
 export const CustomInput = ({ field, form, ...props }: any) => {
   return <Input {...field} {...props} />;

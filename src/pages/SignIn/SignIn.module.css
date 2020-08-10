@@ -39,3 +39,11 @@
     display: flex;
     justify-content: space-around;
 }
+
+.errorMessage{
+    color: rgb(230, 0, 0);
+    margin-top: -20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-self: start;
+}

@@ -24,7 +24,7 @@ const GoodsContainer = ({
 }: PropsFromRedux) => {
   useEffect(() => {
     getGoods();
-  }, [getGoods]);
+  }, [goodsList]);
 
   return (
     <div className={styles.container}>

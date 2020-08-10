@@ -1,0 +1,51 @@
+.wrapper{
+
+}
+
+.deleteIconLabel{
+    background-color: rgba(255, 0, 102, 0.3) !important;
+}
+
+.deleteIconLabel:hover>.deleteIcon{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.deleteIcon{
+    color: red !important;
+    font-size: 16px !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+.menuItem{
+    margin: 15px 10px 10px 15px;
+    border: 1px solid red;
+    border-radius: 7px;
+}
+
+.menuItem:hover{
+    box-shadow: 0 0 20px rgba(255, 0, 102, 0.3);
+}
+
+.caltegoriesListWrapper{
+    width: 70%;
+    margin: 40px auto 0 auto !important;
+    flex-wrap: wrap;
+}
+
+.modalText{
+    color: black;
+}
+
+.addCategoryBtn{
+    margin-left: 15px !important;
+    height: 70%;
+    margin-top: 15px !important;
+}
+
+.newCategoryBtn{
+    width: 50%;
+    height: 3.2em;
+    border-radius: 7px;
+}
