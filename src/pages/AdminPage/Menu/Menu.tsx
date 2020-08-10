@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Grid, Menu, Segment, Sidebar, Image, Icon } from "semantic-ui-react";
-import styles from "./Sidebar.module.css";
 import defaultAvatar from "../../../assets/images/defaultAvatar.png";
+import styles from "../../UserPage/Sidebar/Sidebar.module.css";
 
-const MainSidebar = () => {
-  const [visible, setVisible] = useState(true);
+export default function () {
+  const [visible, setVisible] = useState<boolean>(true);
 
   useEffect(() => {}, []);
 
@@ -33,13 +33,13 @@ const MainSidebar = () => {
               Головна
             </Menu.Item>
             <Menu.Item className={styles.menuItem} as="a">
-              Додати товар
+              Категорії
             </Menu.Item>
             <Menu.Item className={styles.menuItem} as="a">
-              Редагувати товар
+              Користувачі
             </Menu.Item>
             <Menu.Item className={styles.menuItem} as="a">
-              Профіль
+              Реклама
             </Menu.Item>
             <Menu.Item className={styles.menuItem} as="a">
               Вихід
@@ -63,7 +63,5 @@ const MainSidebar = () => {
         onClick={() => setVisible(true)}
       />
     </div>
-      )
-};
-
-export default MainSidebar;
+  );
+}

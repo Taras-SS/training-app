@@ -1,12 +1,8 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.module.css";
 import Header from "./components/Header/Header";
-import Admin from "./pages/Admin/Admin";
+import UserPage from "./pages/UserPage/UserPage";
 import "semantic-ui-css/semantic.min.css";
 import SignIn from "./pages/SignIn/SignIn";
 import MainPage from "./pages/MainPage/MainPage";
@@ -14,6 +10,7 @@ import { store, persistor } from "./store";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import SignUp from "./pages/SignUp/SignUp";
+import AdminPage from "./pages/AdminPage/Admin";
 
 function App() {
   return (
@@ -25,8 +22,9 @@ function App() {
             <Switch>
               <Route exact path="/" component={MainPage} />
               <Route path="/signIn" component={SignIn} />
-              <Route path="/admin" component={Admin} />
+              <Route path="/userPage" component={UserPage} />
               <Route path="/signup" component={SignUp} />
+              <Route path="/admin" component={AdminPage} />
             </Switch>
           </Router>
         </PersistGate>

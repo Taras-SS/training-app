@@ -4,8 +4,8 @@ import { Button } from "semantic-ui-react";
 import { CustomInput } from "../SignIn/SignIn";
 import styles from "./SignUp.module.css";
 import * as Yup from "yup";
-import {signUp} from "../../store/actions/auth";
-import { connect } from 'react-redux';
+import { signUp } from "../../store/actions/auth";
+import { connect } from "react-redux";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
@@ -30,13 +30,16 @@ interface ISignUp {
 }
 
 const SignUp = ({ onSignUp, history }: any) => {
+<<<<<<< HEAD
+=======
 
+>>>>>>> 35182a33c88a1791173eafbee091b49d221b7d65
   useEffect(() => {}, []);
 
   const handleSignUp = async (values: ISignUp, formikActions: any) => {
     const response = await onSignUp(values);
-    if(!response){
-      history.push('/signin');
+    if (!response) {
+      history.push("/signin");
     }
     if (response && response.err) {
       formikActions.setErrors(response.err);
@@ -108,11 +111,10 @@ const SignUp = ({ onSignUp, history }: any) => {
       </Formik>
     </div>
   );
-}
+};
 const mapDispatchToProps = (dispatch: Function) => {
   return {
     onSignUp: (credential: ISignUp) => dispatch(signUp(credential)),
   };
 };
 export default connect(null, mapDispatchToProps)(SignUp);
-

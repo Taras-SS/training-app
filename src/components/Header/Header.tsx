@@ -7,7 +7,7 @@ export default function () {
 
   return (
     <Menu>
-      <Menu.Item as={Link} to="/admin" name="Admin">
+      <Menu.Item as={Link} to="/userPage" name="Admin">
         Admin
       </Menu.Item>
 
